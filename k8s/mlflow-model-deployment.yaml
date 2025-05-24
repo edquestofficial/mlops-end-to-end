@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlflow-model-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlflow-model-server
+  template:
+    metadata:
+      labels:
+        app: mlflow-model-server
+    spec:
+      containers:
+        - name: mlflow-model
+          image: mlflow-model:v1
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MODEL_URI
+              value: runs:/914197b20d374e638033a3006fa64a28/iris_model  # Replace dynamically
+            - name: MLFLOW_TRACKING_URI
+              value: http://10.100.198.240:5000  # Replace dynamically
+          command: ["sh", "-c"]
+          args:
+            - mlflow models serve -m $MODEL_URI --host 0.0.0.0 --port 5000
