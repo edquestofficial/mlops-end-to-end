@@ -20,10 +20,9 @@ def home():
 @app.post("/predict/")
 async def predict(request: PredictionRequest):
     try:
-        # Extract features and reshape for the model
-        features = np.array(request.features).reshape(-1, 1)  # Reshape for sklearn
+       
+        features = np.array(request.features).reshape(-1, 1) 
 
-        # Predict using the model
         predictions = model.predict(features)
 
         result = {
