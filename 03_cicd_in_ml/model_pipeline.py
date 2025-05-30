@@ -69,6 +69,7 @@ def register_model(model):
     mlflow.sklearn.log_model(registered_model_name="ice cream",
                              sk_model=model,
                              artifact_path="ice_cream")
+    print("Model registerd successfully ...")
 
 if __name__ == "__main__":
     X, y = load_data()
@@ -77,3 +78,4 @@ if __name__ == "__main__":
     y_train_pred, y_test_pred = predict(model, X_train, X_test)
     mae, mse, rmse, r2 = evaluate(y_test, y_test_pred)
     print(f"mae: {mae}, mse: {mse}, rmse : {rmse}, r2: {r2}")
+    register_model(model)
