@@ -11,7 +11,7 @@ mlflow.set_tracking_uri("http://192.168.1.100:5001")
 mlflow.set_experiment("ice_cream_test")
 
 def load_data():
-    df = pd.read_csv("../03_cicd_in_ml/ice_cream.csv")
+    df = pd.read_csv("../../03_cicd_in_ml/ice_cream.csv")
     X = df[['temp']]
     y = df.iloc[:, -1]
     return X, y
