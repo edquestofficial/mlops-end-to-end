@@ -8,7 +8,7 @@ import mlflow
 import mlflow.sklearn
 
 mlflow.set_tracking_uri("http://192.168.1.100:5001")
-mlflow.set_experiment("ice_cream_experiment")
+mlflow.set_experiment("ice_cream_test")
 
 def load_data():
     df = pd.read_csv("ice_cream.csv")
