@@ -16,4 +16,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r 03_cicd_in_ml/requirements.txt
       - name: Train and log to MLflow
-        run: python3 03_cicd_in_ml/model_pipeline.py
+        run: |
+          cd 03_cicd_in_ml
+          python3 model_pipeline.py
