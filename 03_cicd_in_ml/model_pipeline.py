@@ -8,8 +8,8 @@ import mlflow
 import mlflow.sklearn
 
 # Start MLflow tracking]
-mlflow.set_tracking_uri("http://192.168.1.100:5000")
-mlflow.set_experiment("Icecream_sale")
+mlflow.set_tracking_uri("http://192.168.1.100:5000") # Change this IP, according to your MLFlow UI deployment
+mlflow.set_experiment("Icecream_sale") # Change this experiment name, accordingly
 
 def load_data():
     df = pd.read_csv("ice_cream.csv")

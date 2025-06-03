@@ -1,0 +1,21 @@
+name: Train and Register Model
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  train-model:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install -r 03_cicd_in_ml/requirements.txt
+      - name: Train and log to MLflow
+        run: |
+          cd 03_cicd_in_ml
+          python3 model_pipeline.py
