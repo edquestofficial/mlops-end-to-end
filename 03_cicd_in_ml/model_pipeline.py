@@ -22,7 +22,7 @@ def split_data(X, y):
     return X_train, X_test, y_train, y_test
 
 def model_train(X_train, y_train):
-    with mlflow.model_train():
+    with mlflow.start_run():
         model = LinearRegression()
         model.fit(X_train, y_train)
 
