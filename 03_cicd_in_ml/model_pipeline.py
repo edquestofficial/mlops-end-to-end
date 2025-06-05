@@ -7,8 +7,14 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import mlflow
 import mlflow.sklearn
 
+<<<<<<< HEAD
 mlflow.set_tracking_uri("http://192.168.1.100:5001")
 mlflow.set_experiment("ice_cream_test")
+=======
+# Start MLflow tracking]
+mlflow.set_tracking_uri("http://192.168.1.100:5000") # Change this IP, according to your MLFlow UI deployment
+mlflow.set_experiment("Icecream_sale") # Change this experiment name, accordingly
+>>>>>>> 105010567e5fdceafb45db64eaa4eae269c4084e
 
 def load_data():
     df = pd.read_csv("ice_cream.csv")
@@ -25,10 +31,16 @@ def model_train(X_train, y_train):
         model = LinearRegression()
         model.fit(X_train, y_train)
 
+<<<<<<< HEAD
         # Log parameters
         mlflow.log_param("fit_intercept", model.fit_intercept)
         mlflow.log_param("normalize", getattr(model, "normalize", "n/a"))  # For backward compatibility
 
+=======
+        #Log parameters
+        mlflow.log_param("fit_intercept", model.fit_intercept)
+        mlflow.log_param("normalize", getattr(model, "normalize", "n/a")) # For backward compatibity
+>>>>>>> 105010567e5fdceafb45db64eaa4eae269c4084e
         return model
 
 def predict(model, X_train, X_test):
