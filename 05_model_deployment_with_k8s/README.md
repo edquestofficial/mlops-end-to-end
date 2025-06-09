@@ -146,7 +146,7 @@ curl -X POST http://10.102.160.124:80/invocations \
 
 For Multiple inputs:
 
-curl -X POST http://10.102.160.124:80/invocations \
+curl -X POST http://10.96.219.175:80/invocations \
      -H "Content-Type: application/json" \
      -d '{
            "dataframe_split": {
