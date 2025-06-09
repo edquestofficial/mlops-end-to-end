@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ice-cream-model-config
+data:
+  config.ini: |
+    [mlflow]
+    tracking_uri = http://10.109.47.85:5000
+    model_name = ice-cream-data
+    alias = dev
+    port = 5000
