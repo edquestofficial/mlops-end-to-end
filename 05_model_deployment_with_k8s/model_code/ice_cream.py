@@ -6,7 +6,7 @@ import model_pipeline as pipeline
 def main():
     try:
         # Set up MLflow tracking
-        mlflow.set_tracking_uri("http://10.109.47.85:5000")
+        mlflow.set_tracking_uri("http://192.168.1.100:32000")
         mlflow.set_experiment("ice cream")
 
         # Load and split data
