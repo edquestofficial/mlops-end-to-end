@@ -131,14 +131,27 @@
       ./latest_code/k8s/downgrade_model.sh.sh
 
 
-<!--  curl http://10.100.198.240:5000/invocations \
-   -H "Content-Type: application/json" \
-   --data '{
-     "inputs": [
-       [5.1, 3.5, 1.4, 0.2],
-       [6.2, 3.4, 5.4, 2.3],
-       [5.9, 3.0, 5.1, 1.8]
-     ]
-   }'
- -->
+For Inferencing the model with simple data:
+
+curl -X POST http://10.102.160.124:80/invocations \
+     -H "Content-Type: application/json" \
+     -d '{
+           "dataframe_split": {
+             "columns": ["temp"],
+             "data": [[33]]
+           }
+         }'
+
+
+
+For Multiple inputs:
+
+curl -X POST http://10.102.160.124:80/invocations \
+     -H "Content-Type: application/json" \
+     -d '{
+           "dataframe_split": {
+             "columns": ["temp"],
+             "data": [[33], [40], [25]]
+           }
+         }'
  
