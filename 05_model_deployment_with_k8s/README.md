@@ -55,13 +55,16 @@
   1. Install Metrics Server
      If not already installed, you can install it using:
      kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+     Edit the deployment of metric server to make it running, by adding it
+     # - --kubelet-insecure-tls
     
      Verify it's working:
      kubectl get deployment metrics-server -n kube-system
 
   2: Create the HPA
     Use the following command to create an HPA that scales based on CPU usage:
-    kubectl autoscale deployment <your deployment-name> --cpu-percent=50 --min=1 --max=5
+    kubectl autoscale deployment ice-cream-model-deployment --cpu-percent=50 --min=1 --max=5
 
     This means:
       If CPU usage exceeds 50%, Kubernetes will scale up the pods.
