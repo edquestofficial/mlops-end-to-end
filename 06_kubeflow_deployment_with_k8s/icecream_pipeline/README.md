@@ -1,22 +1,31 @@
 ## Setup Virtual Environment and install dependencies
 
 Step 1: Create and activate virtual environment
+```bash
 python3.10 -m venv kfp-env
 source kfp-env/bin/activate
-# Step 2: Upgrade pip + required build tools
+```
+Step 2: Upgrade pip + required build tools
+```bash
 pip install --upgrade pip setuptools wheel
-# Step 3: Pre-install Cython < 3.0 (build requirement for PyYAML 5.4.1)
+```
+Step 3: Pre-install Cython < 3.0 (build requirement for PyYAML 5.4.1)
+```bash
 pip install "Cython<3.0.0"
-# Step 4: Build and install PyYAML==5.4.1 manually
+```
+Step 4: Build and install PyYAML==5.4.1 manually
+```bash
 pip install --no-build-isolation PyYAML==5.4.1
+```
 # Step 5: Install all remaining dependencies from pyproject.toml
+```bash
 pip install \
   kfp==1.8.1 \
   urllib3<2.0 \
   requests-toolbelt<1.0.0 \
   google-auth==1.35.0 \
   protobuf==3.20.3
-
+```
 # Ice Cream Price Prediction Pipeline with Kubeflow
 
 This project demonstrates a modular, production-ready **Kubeflow Pipeline** that predicts ice cream prices based on temperature data using Scikit-learn. It includes data preprocessing, model training, evaluation, and optional deployment logic via KServe.
