@@ -1,18 +1,14 @@
 ## Setup Virtual Environment and install dependencies
 
-# Step 1: Create and activate virtual environment
+Step 1: Create and activate virtual environment
 python3.10 -m venv kfp-env
 source kfp-env/bin/activate
-
 # Step 2: Upgrade pip + required build tools
 pip install --upgrade pip setuptools wheel
-
 # Step 3: Pre-install Cython < 3.0 (build requirement for PyYAML 5.4.1)
 pip install "Cython<3.0.0"
-
 # Step 4: Build and install PyYAML==5.4.1 manually
 pip install --no-build-isolation PyYAML==5.4.1
-
 # Step 5: Install all remaining dependencies from pyproject.toml
 pip install \
   kfp==1.8.1 \
