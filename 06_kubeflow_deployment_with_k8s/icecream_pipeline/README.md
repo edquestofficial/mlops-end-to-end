@@ -1,5 +1,4 @@
-## ############### Setup Virtual Environment and install dependencies ###############
-
+Setup Virtual Environment and install dependencies
 # Step 1: Create and activate virtual environment
 python3.10 -m venv kfp-env
 source kfp-env/bin/activate
@@ -20,9 +19,6 @@ pip install \
   requests-toolbelt<1.0.0 \
   google-auth==1.35.0 \
   protobuf==3.20.3
-
-
-# ################################################################################
 
 # Ice Cream Price Prediction Pipeline with Kubeflow
 
