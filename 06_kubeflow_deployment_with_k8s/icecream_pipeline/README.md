@@ -17,7 +17,7 @@ Step 4: Build and install PyYAML==5.4.1 manually
 ```bash
 pip install --no-build-isolation PyYAML==5.4.1
 ```
-# Step 5: Install all remaining dependencies from pyproject.toml
+Step 5: Install all remaining dependencies
 ```bash
 pip install \
   kfp==1.8.1 \
