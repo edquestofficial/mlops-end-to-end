@@ -1,4 +1,5 @@
-# Setup Virtual Environment and install dependencies
+## Setup Virtual Environment and install dependencies
+
 # Step 1: Create and activate virtual environment
 python3.10 -m venv kfp-env
 source kfp-env/bin/activate
