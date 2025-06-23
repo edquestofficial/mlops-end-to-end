@@ -166,24 +166,3 @@ A CSV file with at least two columns:
 These are stored via `dsl.VolumeOp`.
 
 ---
-
-## Visualizing Metrics
-
-Kubeflow UI can automatically render metrics from the JSON format written in:
-
-```python
-/data/eval.json
-```
-
-Format:
-
-```json
-{
-  "metrics": [
-    {"name": "mae", "numberValue": 2.1},
-    {"name": "rmse", "numberValue": 1.4},
-    ...
-  ]
-}
-```
----
