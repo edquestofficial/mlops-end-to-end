@@ -15,20 +15,15 @@ pip install "Cython<3.0.0"
 ```
 Step 4: Build and install PyYAML==5.4.1 manually
 ```bash
-pip install --no-build-isolation PyYAML==5.4.1
+pip install "urllib3<2.0"
 ```
 Step 5: Install all remaining dependencies
 ```bash
-pip install \
-  kfp==1.8.1 \
-  urllib3<2.0 \
-  requests-toolbelt<1.0.0 \
-  google-auth==1.35.0 \
-  protobuf==3.20.3
+pip install kfp==1.8.1 
 ```
 # Ice Cream Price Prediction Pipeline with Kubeflow
 
-This project demonstrates a modular, production-ready **Kubeflow Pipeline** that predicts ice cream prices based on temperature data using Scikit-learn. It includes data preprocessing, model training, evaluation, and optional deployment logic via KServe.
+This project demonstrates a modular, production-ready **Kubeflow Pipeline** that predicts ice cream prices based on temperature data using Scikit-learn. It includes data preprocessing, model training, and evaluation.
 
 ---
 
@@ -64,8 +59,6 @@ This project demonstrates a modular, production-ready **Kubeflow Pipeline** that
    Trains a `LinearRegression` model on temperature vs price.
 3. **Evaluate**  
    Calculates MAE, MSE, RMSE, R², and outputs `eval.json` for Kubeflow UI.
-4. **(Optional) Deploy**  
-   Placeholder for deploying the model using KServe.
 
 ---
 
@@ -102,6 +95,9 @@ for example:
 Push to a registry if needed (e.g., DockerHub or your private registry):
 
 ```bash
+  docker tag <image_name>:<tag> <your-repo>/<image_name>:<tag>
+  docker push <your-repo>/<image_name>:<tag>
+
 for example:
   docker tag sklearn:v2 <your-repo>/sklearn:v2
   docker push <your-repo>/sklearn:v2
@@ -190,17 +186,4 @@ Format:
   ]
 }
 ```
-
----
-
-## Optional: Deployment with KServe
-
-You can enable `deploy.py` and add this step in `ml_pipeline.py`:
-
-```python
-deploy_step = deploy_op(model_input=train_step.outputs["model_output"]).after(evaluate_step)
-```
-
-This can be extended to generate and apply a KServe YAML.
-
 ---
