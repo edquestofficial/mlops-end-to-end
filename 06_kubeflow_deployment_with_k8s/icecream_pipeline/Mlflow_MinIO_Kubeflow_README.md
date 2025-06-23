@@ -76,7 +76,7 @@ You should see:
 
 ---
 
-# 1. MLflow v3.1.0 Setup
+# 2. MLflow v3.1.0 Setup
 
 You need to **update your Dockerfile and MLflow deployment YAML** to match the **actual MinIO credentials**:
 
