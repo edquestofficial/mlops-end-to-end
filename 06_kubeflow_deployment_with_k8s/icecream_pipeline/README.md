@@ -13,7 +13,7 @@ Step 3: Pre-install Cython < 3.0 (build requirement for PyYAML 5.4.1)
 ```bash
 pip install "Cython<3.0.0"
 ```
-Step 4: Build and install PyYAML==5.4.1 manually
+Step 4: install urllib3<2.0 manually
 ```bash
 pip install "urllib3<2.0"
 ```
