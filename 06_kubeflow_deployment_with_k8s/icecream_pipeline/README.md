@@ -15,9 +15,13 @@ pip install "Cython<3.0.0"
 ```
 Step 4: Build and install PyYAML==5.4.1 manually
 ```bash
+pip install --no-build-isolation PyYAML==5.4.1
+```
+Step 5: install urllib3<2.0 manually
+```bash
 pip install "urllib3<2.0"
 ```
-Step 5: Install all remaining dependencies
+Step 6: Install all remaining dependencies
 ```bash
 pip install kfp==1.8.1 
 ```
